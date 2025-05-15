@@ -7,6 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Templates\Ccda\metadata.json" />
+    <Content Remove="Templates\Ccda\ValueSet\ValueSet.json" />
+    <Content Remove="Templates\Hl7v2\CodeSystem\CodeSystem.json" />
+    <Content Remove="Templates\Hl7v2\metadata.json" />
+    <Content Remove="Templates\Json\metadata.json" />
+    <Content Remove="Templates\Json\Schema\meta-schema.json" />
+    <Content Remove="Templates\Stu3ToR4\metadata.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Templates\Ccda\metadata.json" />
+    <None Include="Templates\Ccda\ValueSet\ValueSet.json" />
+    <None Include="Templates\Hl7v2\CodeSystem\CodeSystem.json" />
+    <None Include="Templates\Hl7v2\metadata.json" />
+    <None Include="Templates\Json\metadata.json" />
+    <None Include="Templates\Json\Schema\meta-schema.json" />
+    <None Include="Templates\Stu3ToR4\metadata.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 

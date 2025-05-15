@@ -19,7 +19,7 @@ namespace Fhir.Converter.Api.Controllers
         private static readonly ProcessorSettings processorSettings = new() { };
 
 
-        [HttpGet("hl7v2-to-fhir/{template}")]
+        [HttpPost("hl7v2-to-fhir/{template}")]
         public IActionResult Hl7v2ToFhir(string template, [FromBody] string payload,
             [FromServices] ILogger<Hl7v2Processor> logger)
         {
@@ -41,7 +41,7 @@ namespace Fhir.Converter.Api.Controllers
         }
 
 
-        [HttpGet("ccda-to-fhir/{template}")]
+        [HttpPost("ccda-to-fhir/{template}")]
         public IActionResult CcdaToFhir(string template, [FromBody] string payload,
             [FromServices] ILogger<CcdaProcessor> logger)
         {
@@ -63,7 +63,7 @@ namespace Fhir.Converter.Api.Controllers
         }
 
 
-        [HttpGet("json-to-fhir/{template}")]
+        [HttpPost("json-to-fhir/{template}")]
         public IActionResult JsonToFhir(string template, [FromBody] string payload,
             [FromServices] ILogger<CcdaProcessor> logger)
         {
