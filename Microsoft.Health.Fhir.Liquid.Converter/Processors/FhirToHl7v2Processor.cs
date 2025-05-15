@@ -214,7 +214,8 @@ namespace Microsoft.Health.Fhir.Liquid.Converter.Processors
                     sb.Append(message.EncodingCharacters.FieldSeparator);
                 }
 
-                sb.AppendLine();
+                //sb.AppendLine();
+                sb.Append('\n');
             }
 
             return sb.ToString();

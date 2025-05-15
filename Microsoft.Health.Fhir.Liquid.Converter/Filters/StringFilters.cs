@@ -89,7 +89,8 @@ namespace Microsoft.Health.Fhir.Liquid.Converter
         public static string Sha1Hash(string data)
         {
 #pragma warning disable CA5350
-            using var sha1 = new SHA1Managed(); // lgtm[cs/weak-crypto]
+            //using var sha1 = new SHA1Managed(); // lgtm[cs/weak-crypto]
+            using var sha1 = SHA1.Create(); // lgtm[cs/weak-crypto]
 #pragma warning restore CA5350
             var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(data));
             return string.Concat(hash.Select(b => b.ToString("x2")));
