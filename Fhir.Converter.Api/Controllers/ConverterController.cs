@@ -1,14 +1,8 @@
-﻿using DotLiquid;
-using DotLiquid.Exceptions;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Health.Fhir.Liquid.Converter;
-using Microsoft.Health.Fhir.Liquid.Converter.DotLiquids;
 using Microsoft.Health.Fhir.Liquid.Converter.Exceptions;
 using Microsoft.Health.Fhir.Liquid.Converter.Models;
 using Microsoft.Health.Fhir.Liquid.Converter.Processors;
-using Namotion.Reflection;
-using System.Globalization;
 
 namespace Fhir.Converter.Api.Controllers
 {
@@ -20,6 +14,7 @@ namespace Fhir.Converter.Api.Controllers
 
 
         [HttpPost("hl7v2-to-fhir/{template}")]
+        [Consumes("text/plain")]
         public IActionResult Hl7v2ToFhir(string template, [FromBody] string payload,
             [FromServices] ILogger<Hl7v2Processor> logger)
         {
@@ -42,6 +37,7 @@ namespace Fhir.Converter.Api.Controllers
 
 
         [HttpPost("ccda-to-fhir/{template}")]
+        [Consumes("text/plain")]
         public IActionResult CcdaToFhir(string template, [FromBody] string payload,
             [FromServices] ILogger<CcdaProcessor> logger)
         {
@@ -64,6 +60,7 @@ namespace Fhir.Converter.Api.Controllers
 
 
         [HttpPost("json-to-fhir/{template}")]
+        [Consumes("text/plain")]
         public IActionResult JsonToFhir(string template, [FromBody] string payload,
             [FromServices] ILogger<CcdaProcessor> logger)
         {
