@@ -54,7 +54,7 @@ namespace Microsoft.Health.Fhir.Liquid.Converter
             var obj = JObject.Parse(input);
             var memberToken = obj.SelectToken(path);
 
-            return memberToken.ToString();
+            return memberToken?.ToString();
         }
 
         public static string GenerateIdInput(string segment, string resourceType, bool isBaseIdRequired, string baseId = null)

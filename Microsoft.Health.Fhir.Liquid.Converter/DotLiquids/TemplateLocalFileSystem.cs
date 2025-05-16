@@ -55,7 +55,7 @@ namespace Microsoft.Health.Fhir.Liquid.Converter.DotLiquids
             }
 
             // Get template from cache first
-            if (_templateCache.ContainsKey(templateKey))
+            if (_templateCache.ContainsKey(templateKey) && _templateCache[templateKey] != null)
             {
                 return _templateCache[templateKey];
             }
